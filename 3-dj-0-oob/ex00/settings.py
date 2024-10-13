@@ -1,0 +1,5 @@
+name = "KarnB"
+firstname ="Karn"
+lastname = "Buralek"
+age = "02"
+profession = "none"
