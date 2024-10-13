@@ -1,0 +1,44 @@
+{% extends 'ex01/base.html' %}
+
+{% block title %}Ex01: Display process of a static page.{% endblock %}
+
+{% block content %}
+<h1>{{title}}</h1>
+    
+<h2>1. Client Request</h2>
+<p>A user (client) enters a URL in the browser, like /ex01/display. This triggers an HTTP request, which is sent to the Django server.</p>
+
+<h2>2. URL Routing</h2>
+<p>Django's URL dispatcher looks for a matching URL pattern in the urls.py file. In this case, it will find the route 
+path('ex01/display', views.display, name='display').</p>
+<p>If a match is found, Django forwards the request to the corresponding view function (display in this example).</p>
+
+<h2>3. View Function</h2>
+<p>The view function in views.py handles the request. It typically fetches or processes data (if necessary) and selects a template to render.</p>
+<p>For a static page, the view is simple. It loads the template and passes any necessary context data (in this case, there might be no dynamic data).</p>
+
+<pre>
+from django.shortcuts import render
+
+def display(request):
+    return render(request, 'ex01/display.html')  # Display static HTML
+</pre>
+
+<h2>4. Template Rendering</h2>
+<p>The render() function combines the template file (in this case, display.html) with the context (if any). 
+The template file is an HTML file located in the templates folder.</p>
+<p>Since this is a static page, the template might not contain any dynamic content. It simply loads the HTML and applies any static content like text, images, or CSS styling.</p>
+
+<h2>5. Response to the Client</h2>
+<p>After rendering the template, Django generates an HTTP response and sends the HTML back to the client's browser.</p>
+<p>The browser then interprets the HTML and displays the static web page to the user.</p>
+
+<h2>Example Flow:</h2>
+<ul>
+    <li><strong>Request</strong>: The client requests http://localhost:8000/ex01/display.</li>
+    <li><strong>Routing</strong>: The URL pattern in urls.py directs this request to the display view.</li>
+    <li><strong>View</strong>: The display view loads the display.html template.</li>
+    <li><strong>Template</strong>: The display.html template is rendered and returned as an HTML response.</li>
+    <li><strong>Response</strong>: The browser displays the static page.</li>
+</ul>
+{% endblock %}

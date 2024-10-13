@@ -1,0 +1,64 @@
+{% extends 'ex01/base.html' %}
+
+{% block title %}Ex01: Template engine.{% endblock %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/style2.css' %}">{% endblock %}
+
+{% block content %}
+<h1>{{title}}</h1>
+{% verbatim %}
+<h2>1. Django's Default Template Engine</h2>
+<p>Django uses a powerful templating engine to dynamically generate HTML web pages. Templates can contain both static HTML and Django template tags (special placeholders) for dynamic content. This allows rendering data passed from the view into the template while following a clear separation of logic (in the views) and presentation (in the templates).</p>
+
+<h2>2. Blocks</h2>
+<p>Blocks are a key feature of Django's template inheritance system. A block tag defines a section of a template that can be overridden by child templates. It is often used in a base template, allowing other templates to extend and modify specific parts while reusing the overall structure.</p>
+
+<p>{% block content %}This is the default content{% endblock %}</p>
+<p>In a child template, you can override the block like this:</p>
+
+<p>{% block content %}This is overridden content{% endblock %}</p>
+
+<h2>3. Loops (for ... in)</h2>
+<p>The for tag in Django is used to iterate over lists, dictionaries, or other iterable objects. It allows you to dynamically generate content for each item in a list or dictionary passed as context from the view.</p>
+
+<p>
+<ul>
+    <li>{% for item in items %}</li>
+        <ul><li>{{ item }}</li></ul>
+    <li>{% endfor %}</li>
+</ul>
+</p>
+<p>This will loop through the items list and display each item in an unordered list.</p>
+
+<h2>4. if Control Structures</h2>
+<p>The if tag is used for conditional rendering in templates. It checks whether a condition is true and only displays the content within the block if the condition is met.</p>
+
+<p>
+{% if user.is_authenticated %}
+    Welcome back, {{ user.username }}!
+{% else %}
+    Please log in.
+{% endif %}
+</p>
+<p>This code checks if a user is authenticated and displays a personalized greeting or a login prompt accordingly.</p>
+
+<h2>5. Displaying Context Variables</h2>
+<p>Context variables are the data passed from the view to the template. In the template, these variables can be rendered using double curly braces {{ }}. Django replaces these variables with the actual values at runtime.</p>
+
+<p>
+Hello, {{ user.username }}!
+Your favorite color is {{ favorite_color }}.
+</p>
+<p>In this example, user.username and favorite_color are variables passed from the view and are displayed within the HTML content.</p>
+
+<h2>Example View Passing Context:</h2>
+<p>
+def example_view(request):
+    context = {
+        'user': request.user,
+        'favorite_color': 'blue',
+    }
+    return render(request, 'example_template.html', context)
+</p>
+{% endverbatim %}
+{% endblock %}

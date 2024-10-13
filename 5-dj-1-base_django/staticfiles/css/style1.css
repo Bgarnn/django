@@ -1,0 +1,24 @@
+body {
+    color: blue;
+}
+
+nav {
+    background-color: black;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+nav a:hover {
+    color: aquamarine;
+}
