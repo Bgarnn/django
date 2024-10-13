@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Ex03: Fifty shades of bic</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th>noir</th>
+                <th>rouge</th>
+                <th>bleu</th>
+                <th>vert</th>
+            </tr>
+            {% for color in shades %}
+                <tr>
+                    <td>{{ forloop.counter }}</td> 
+                    <td style="{{ color.r }}"></td>
+                    <td style="{{ color.g }}"></td>
+                    <td style="{{ color.b }}"></td>
+                    <td style="{{ color.a }}"></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

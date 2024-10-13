@@ -8,7 +8,6 @@ def index(request):
     form = InputForm()
     history = []
 
-    # Load existing log entries from the file, if it exists
     if os.path.exists(settings.LOG_FILE_PATH):
         with open(settings.LOG_FILE_PATH, 'r') as file:
             history = [line.strip() for line in file.readlines()]
@@ -20,11 +19,8 @@ def index(request):
             timestamp = timezone.now().strftime('%Y-%m-%d %H:%M:%S')
             log_entry = f"{timestamp} - {input_text}"
 
-            # Write to logs file
             with open(settings.LOG_FILE_PATH, 'a') as file:
                 file.write(log_entry + '\n')
-
-            # Add log entry to history
             history.append(log_entry)
 
     return render(request, 'ex02/index.html', {'form': form, 'history': history})

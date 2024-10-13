@@ -33,6 +33,7 @@ pip install -r requirements.txt
 # @d05 -> python manage.py runserver
 
 # source django_venv/bin/activate
+# @d05 -> python manage.py startapp ex02
 # d05/settings.py -> INSTALLED_APPS = [..., 'ex02',], LOG_FILE_PATH = os.path.join(BASE_DIR, 'ex02/logs.txt')
 # ex02/forms.py
 # ex02/views.py
@@ -40,3 +41,11 @@ pip install -r requirements.txt
 # ex02/urls.py
 # d05/urls.py
 # @d05 -> python manage.py runserver
+
+# source django_venv/bin/activate
+# @d05 -> python manage.py startapp ex03
+# d05/settings.py -> INSTALLED_APPS = [..., 'ex03',]
+# ex03/views.py
+# ex03/templates/ex02/index.html
+# ex03/urls.py
+# d05/urls.py
