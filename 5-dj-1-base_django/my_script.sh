@@ -27,7 +27,16 @@ pip install -r requirements.txt
 # ex01/views.py 
 # create folder in -> mkdir -p ex01/templates/ex01 -> base.html,...,...html
 # create folder in -> mkdir -p ex01/static/css -> style1.css, style2.css
-# d05/settings.py -> INSTALLED_APPS = [..., 'ex00',]
+# d05/settings.py -> INSTALLED_APPS = [..., 'ex01',]
 # d05/settings.py -> STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') STATICFILES_DIRS = [os.path.join(BASE_DIR, 'ex01/static'),]
 # @d05 -> python manage.py collectstatic
+# @d05 -> python manage.py runserver
+
+# source django_venv/bin/activate
+# d05/settings.py -> INSTALLED_APPS = [..., 'ex02',], LOG_FILE_PATH = os.path.join(BASE_DIR, 'ex02/logs.txt')
+# ex02/forms.py
+# ex02/views.py
+# ex02/templates/ex02/index.html
+# ex02/urls.py
+# d05/urls.py
 # @d05 -> python manage.py runserver
