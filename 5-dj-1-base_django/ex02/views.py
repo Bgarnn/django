@@ -6,7 +6,7 @@ from .forms import InputForm
 
 def index(request):
     form = InputForm()
-    history = []
+    history:list[str] = []
 
     if os.path.exists(settings.LOG_FILE_PATH):
         with open(settings.LOG_FILE_PATH, 'r') as file:

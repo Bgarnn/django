@@ -10,7 +10,7 @@ source django_venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# django-admin startproject 05
+# django-admin startproject d05
 # cd d05
 # python manage.py startapp ex00
 # d05/settings.py -> INSTALLED_APPS = [..., 'ex00',]
