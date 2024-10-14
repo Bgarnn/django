@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+        td p{
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -22,10 +27,10 @@
             {% for color in shades %}
                 <tr>
                     <td>{{ forloop.counter }}</td> 
-                    <td style="{{ color.r }}"></td>
-                    <td style="{{ color.g }}"></td>
-                    <td style="{{ color.b }}"></td>
-                    <td style="{{ color.a }}"></td>
+                    <td style="background-color: rgb({{ color.r }})"><p>{{ color.r }}</p></td>
+                    <td style="background-color: rgb({{ color.g }})"><p>{{ color.g }}</p></td>
+                    <td style="background-color: rgb({{ color.b }})"><p>{{ color.b }}</p></td>
+                    <td style="background-color: rgb({{ color.a }})"><p>{{ color.a }}</p></td>
                 </tr>
             {% endfor %}
         </table>

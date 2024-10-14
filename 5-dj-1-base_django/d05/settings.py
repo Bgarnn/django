@@ -132,4 +132,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOG_FILE_PATH = os.path.join(BASE_DIR, 'ex02/logs.txt')
+LOG_FILE_PATH = os.path.join(BASE_DIR, 'ex02/history.log')
